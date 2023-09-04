@@ -1,0 +1,7 @@
+celtic = {
+	breton = {
+		male_patronym = ""
+		female_patronym = ""
+		prefix = no
+	}
+}

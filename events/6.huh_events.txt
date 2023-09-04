@@ -1,0 +1,67 @@
+#
+# Spiritual Events
+#
+
+namespace = HUH
+
+# Spiritual dies
+character_event = {
+	id = HUH.61001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_spiritual
+
+	immediate = {
+		remove_trait = immortal
+		liege = {
+			character_event = { id = HUH.61002 }
+		}
+	}
+}
+
+character_event = {
+	id = HUH.61002
+	desc = EVTDESCHUH61002
+	picture = GFX_evt_death
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+
+	ai = no
+	has_character_flag = huh_spiritual
+
+	immediate = {
+		clr_character_flag = huh_spiritual
+		FROM = {
+			clr_character_flag = is_huh_spiritual
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH01021
+	}
+}
+
+# Spiritual changes liege
+character_event = {
+	id = HUH.62001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_spiritual
+
+	trigger = {
+		NOT = { FROM = { character = no } }
+	}
+
+	immediate = {
+		clr_character_flag = is_huh_spiritual
+		remove_trait = immortal
+		FROM = {
+			clr_character_flag = huh_spiritual
+		}
+	}
+}

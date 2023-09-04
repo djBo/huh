@@ -1,0 +1,71 @@
+#
+# Spymaster Events
+#
+
+namespace = HUH
+
+# Spymaster dies
+character_event = {
+	id = HUH.51001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_spymaster
+
+	trigger = {
+		NOT = { has_character_flag = is_huh_spouse }
+	}
+
+	immediate = {
+		remove_trait = immortal
+		liege = {
+			character_event = { id = HUH.51002 }
+		}
+	}
+}
+
+character_event = {
+	id = HUH.51002
+	desc = EVTDESCHUH51002
+	picture = GFX_evt_death
+	border = GFX_event_normal_frame_intrigue
+
+	is_triggered_only = yes
+
+	ai = no
+	has_character_flag = huh_spymaster
+
+	immediate = {
+		clr_character_flag = huh_spymaster
+		FROM = {
+			clr_character_flag = is_huh_spymaster
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH01021
+	}
+}
+
+# Spymaster changes liege
+character_event = {
+	id = HUH.52001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_spymaster
+
+	trigger = {
+		NOT = { FROM = { character = no } }
+	}
+
+	immediate = {
+		clr_character_flag = is_huh_spymaster
+		remove_trait = immortal
+		FROM = {
+			clr_character_flag = huh_spymaster
+		}
+	}
+}

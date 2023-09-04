@@ -1,0 +1,136 @@
+#
+# Spouse Events
+#
+
+namespace = HUH
+
+# Spouse dies
+character_event = {
+	id = HUH.11001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_spouse
+
+	immediate = {
+		remove_trait = immortal
+		any_artifact = { unsafe_destroy_artifact = yes }
+		liege = {
+			character_event = { id = HUH.11002 }
+		}
+	}
+}
+
+character_event = {
+	id = HUH.11002
+	desc = EVTDESCHUH11002
+	picture = GFX_evt_death
+
+	is_triggered_only = yes
+
+	ai = no
+	has_character_flag = huh_spouse
+
+	immediate = {
+		clr_character_flag = huh_spouse
+		FROM = {
+			clr_character_flag = is_huh_spouse
+			if = { limit = { has_character_flag = is_huh_marshal }
+				clr_character_flag = is_huh_marshal
+				ROOT = { clr_character_flag = huh_marshal }
+			}
+			if = {
+				limit = { has_character_flag = is_huh_spymaster }
+				clr_character_flag = is_huh_spymaster
+				ROOT = { clr_character_flag = huh_spymaster }
+			}
+			if = {
+				limit = { has_character_flag = is_huh_maiden }
+				clr_character_flag = is_huh_maiden
+				ROOT = { clr_character_flag = huh_maiden }
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH01021
+	}
+}
+
+# Spouse changes liege
+character_event = {
+	id = HUH.12001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_spouse
+
+	trigger = {
+		NOT = { FROM = { character = no } }
+	}
+
+	immediate = {
+		clr_character_flag = is_huh_spouse
+		remove_trait = immortal
+		FROM = {
+			clr_character_flag = huh_spouse
+		}
+	}
+}
+
+# Spouse gets pregnant
+character_event = {
+	id = HUH.13001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	only_women = yes
+	has_character_flag = is_huh_spouse
+
+	immediate = {
+		spouse = {
+			character_event = { id = HUH.13002 }
+		}
+	}
+}
+
+# Option to make spouse celibate
+character_event = {
+	id = HUH.13002
+	desc = EVTDESCHUH13002
+	picture = GFX_evt_pregnancy
+
+	is_triggered_only = yes
+
+	ai = no
+	has_character_flag = huh_spouse
+
+	trigger = {
+		spouse = {
+			num_of_children >= 9
+		}
+	}
+
+	immediate = {
+		export_to_variable = {
+			which = local_child_count
+			value = num_of_children
+			who = spouse
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH03011
+		FROM = {
+			add_trait = celibate
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH03012
+	}
+
+}

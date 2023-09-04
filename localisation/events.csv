@@ -1,0 +1,100 @@
+#CODE;Text;;;;;;;;;;;;;x
+
+#JadeDragon.csv
+#UNFORTUNATE;Unfortunate...;Malencontreux...;Bedauerlich...;;Lamentable...;;;;;;;;;x
+
+#v2_42.csv
+#ANSWER_YES;Yes.;Oui.;Ja.;;Sí.;;;;;;;;;x
+#ANSWER_NO;No.;Non.;Nein.;;No.;;;;;;;;;x
+
+#MonksAndMystics.csv
+#CHANGED_MIND;I've changed my mind...;J'ai changé d'avis...;Ich habe es mir anders überlegt ...;;He cambiado de opinión...;;;;;;;;;x
+
+#v1_06.csv
+#EVTOPTD37055;You are already married, remember? To [From.Spouse.GetTitledFirstName]?;Vous êtes déjà marié, vous vous souvenez ? [From.Spouse.Get_au_TitledFirstName] ?;Ihr seid bereits verheiratet, erinnert Ihr Euch? Mit [From.Spouse.GetTitledFirstName]?;;¿Ya estás casada, recuerdas? ¿Con [From.Spouse.GetTitledFirstName]?;;;;;;;;;x
+
+# Start screen
+HUH00001;Huh;;;;;;;;;;;;;x
+EVTDESCHUH00001;This mod brings a little sillyness and makes you very powerful.\n\nAs a result of enabling, your existing counsil members and commanders will be fired, so you can start fresh.\n\nAre you up to the challenge of conquering the world?;;;;;;;;;;;;;x
+EVTOPTHUH00011;Bring it on!;;;;;;;;;;;;;x
+EVTOPTHUH00012;No, thanks.;;;;;;;;;;;;;x
+
+EVTDESCHUH00002;Can we introduce you to someone special?;;;;;;;;;;;;;x
+EVTOPTHUH00021;That belly dancer looks cute in her revealing robes!;;;;;;;;;;;;;x
+EVTOPTHUH00022;That warrior looks cute in her shining armour!;;;;;;;;;;;;;x
+EVTOPTHUH00023;That gentleman looks so handsome in his suit!;;;;;;;;;;;;;x
+EVTOPTHUH00024;Seriously? I'm married to [From.Spouse.GetTitledFirstName]!;;;;;;;;;;;;;x
+
+EVTDESCHUH00003;Let's assign a new chancellor.;;;;;;;;;;;;;x
+EVTOPTHUH00031;That guy with the pointy ears seems a good fit!;;;;;;;;;;;;;x
+
+EVTDESCHUH00004;Let's assign a new marshal.;;;;;;;;;;;;;x
+EVTOPTHUH00041;That guy seems to know what he's doing!;;;;;;;;;;;;;x
+EVTOPTHUH00042;That girl in the shining armour seems very capable!;;;;;;;;;;;;;x
+EVTOPTHUH00043;My wife is perfect for the job!;;;;;;;;;;;;;x
+EVTOPTHUH00043_INFO;This option is available due to [Root.Spouse.GetHerHis] §RMartial§! skill;;;;;;;;;;;;;x
+
+EVTDESCHUH00005;Let's assign a new treasurer.;;;;;;;;;;;;;x
+EVTOPTHUH00051;That guy seems to be going places!;;;;;;;;;;;;;x
+
+EVTDESCHUH00006;Let's assign a new spymaster.;;;;;;;;;;;;;x
+EVTOPTHUH00061;That handsome gentleman might shake things up!;;;;;;;;;;;;;x
+EVTOPTHUH00062;That cute belly dancer might stir things up!;;;;;;;;;;;;;x
+EVTOPTHUH00063;My [From.Spouse.GetHusbandWife] is the ideal choice!;;;;;;;;;;;;;x
+EVTOPTHUH00063_INFO;This option is available due to [Root.Spouse.GetHerHis] §YIntrigue§! skill;;;;;;;;;;;;;x
+
+EVTDESCHUH00007;Let's assign a new spiritual.;;;;;;;;;;;;;x
+EVTOPTHUH00071;That guy with the curly hair seems to be the ideal hippy!;;;;;;;;;;;;;x
+
+EVTDESCHUH00008;Let's assign a new commander.;;;;;;;;;;;;;x
+EVTOPTHUH00081;That girl in the shining armour seems very capable!;;;;;;;;;;;;;x
+EVTOPTHUH00082;My wife is perfect for the job!;;;;;;;;;;;;;x
+EVTOPTHUH00082_INFO;This option is available due to [Root.Spouse.GetHerHis] §RMartial§! skill;;;;;;;;;;;;;x
+EVTOPTHUH00083;Sadly, I've already assigned my wife as marshal...;;;;;;;;;;;;;x
+EVTOPTHUH00084;Sadly, there are no available candidates;;;;;;;;;;;;;x
+
+EVTDESCHUH00009;Let's assign a new mayor.;;;;;;;;;;;;;x
+EVTOPTHUH00091;That guy isn't going to revolt, right? ... Right?;;;;;;;;;;;;;x
+
+EVTDESCHUH00010;Let's assign a new vassal.;;;;;;;;;;;;;x
+EVTOPTHUH00101;That guy looks very familiar! Could it be...?;;;;;;;;;;;;;x
+
+EVTDESCHUH00011;What kind of animal do you like?;;;;;;;;;;;;;x
+EVTOPTHUH00111;I can haz cheezeburger?;;;;;;;;;;;;;x
+EVTOPTHUH00112;I am the flufiestest!;;;;;;;;;;;;;x
+EVTOPTHUH00113;I iz prickly!;;;;;;;;;;;;;x
+EVTOPTHUH00114;Really? This is your question?;;;;;;;;;;;;;x
+
+EVTDESCHUH00012;Okay, okay. No need to get snarky!\nMaybe something else?;;;;;;;;;;;;;x
+EVTOPTHUH00121;Actually, I'm more into picking flowers...;;;;;;;;;;;;;x
+EVTOPTHUH00121_INFO;Are you a lumberjack by any chance?;;;;;;;;;;;;;x
+EVTOPTHUH00122;Enough of this nonsense!;;;;;;;;;;;;;x
+
+EVTDESCHUH00013;Wauw! Sounds like someone needs a chill pill!\nYou know what's going to happen next, right?;;;;;;;;;;;;;x
+EVTOPTHUH00131;Bugger...;;;;;;;;;;;;;x
+EVTOPTHUH00131_INFO;Should've seen this coming!;;;;;;;;;;;;;x
+
+EVTDESCHUH00014A;Anyways...\nHow about some upgrades?;;;;;;;;;;;;;x
+EVTDESCHUH00014B;Sure, if you're into that!\nHow about some upgrades?;;;;;;;;;;;;;x
+EVTDESCHUH00014C;Excellent choice!\nHow about some upgrades?;;;;;;;;;;;;;x
+EVTOPTHUH00141;A good idea!;;;;;;;;;;;;;x
+
+
+
+
+EVTDESCHUH11002;Your [From.GetHusbandWife] [From.GetBestName] has died!;;;;;;;;;;;;;x
+EVTDESCHUH21002;Your chancellor [From.GetBestName] has died!;;;;;;;;;;;;;x
+EVTDESCHUH31002;Your marshal [From.GetBestName] has died!;;;;;;;;;;;;;x
+EVTDESCHUH41002;Your treasurer [From.GetBestName] has died!;;;;;;;;;;;;;x
+EVTDESCHUH51002;Your spymaster [From.GetBestName] has died!;;;;;;;;;;;;;x
+EVTDESCHUH61002;Your spiritual [From.GetBestName] has died!;;;;;;;;;;;;;x
+EVTDESCHUH71002;Your maiden [From.GetBestName] has died!;;;;;;;;;;;;;x
+EVTDESCHUH81002;Your major [From.GetBestName] has died!;;;;;;;;;;;;;x
+EVTDESCHUH91002;Your vassal [From.GetBestName] has died!;;;;;;;;;;;;;x
+EVTOPTHUH01021;How unfortunate!;;;;;;;;;;;;;x
+
+EVTDESCHUH03001;You are pregnant, and you already have [local_child_count.GetValue] children!;;;;;;;;;;;;;x
+EVTDESCHUH13002;Your wife [From.GetFirstName] is pregnant, and you already have [local_child_count.GetValue] children!;;;;;;;;;;;;;x
+EVTOPTHUH03011;I must put a stop to this!;;;;;;;;;;;;;x
+EVTOPTHUH03012;One more doesn't hurt;;;;;;;;;;;;;x
+

@@ -1,0 +1,42 @@
+#CODE;NAME;;;;;;;;;;;;;x
+#CODE_desc;DESCRIPTION;;;;;;;;;;;;;x
+
+show_huh;Show Huh;;;;;;;;;;;;;x
+show_huh_desc;Shows Huh.;;;;;;;;;;;;;x
+
+hide_huh;Hide Huh;;;;;;;;;;;;;x
+hide_huh_desc;Hides Huh.;;;;;;;;;;;;;x
+
+huh_chancellor;----Create chancellor;;;;;;;;;;;;;x
+huh_chancellor_desc;Creates a new chancellor Edmund.;;;;;;;;;;;;;x
+
+huh_maiden;----Create maiden;;;;;;;;;;;;;x
+huh_maiden_desc;Creates a new maiden Jeanne. She will become your marshal.;;;;;;;;;;;;;x
+
+huh_marshal;----Create marshal;;;;;;;;;;;;;x
+huh_marshal_desc;Creates a new marshal Ulysses.;;;;;;;;;;;;;x
+
+huh_treasurer;----Create treasurer;;;;;;;;;;;;;x
+huh_treasurer_desc;Creates a new treasurer Alonso.;;;;;;;;;;;;;x
+
+huh_spymaster;----Create spymaster;;;;;;;;;;;;;x
+huh_spymaster_desc;Creates a new spymaster James.;;;;;;;;;;;;;x
+
+huh_spiritual;----Create spiritual;;;;;;;;;;;;;x
+huh_spiritual_desc;Creates a new spiritual Bob.;;;;;;;;;;;;;x
+
+huh_wife;----Create wife;;;;;;;;;;;;;x
+huh_wife_desc;Creates a new wife. She will be of your culture.;;;;;;;;;;;;;x
+
+huh_spouse;----Create spouse;;;;;;;;;;;;;x
+huh_spouse_desc;Creates a new spouse.;;;;;;;;;;;;;x
+
+huh_commander;----Create maiden;;;;;;;;;;;;;x
+huh_commander_desc;Creates a new maiden Jeanne. She will become commander.;;;;;;;;;;;;;x
+
+huh_mayor;----Create mayor;;;;;;;;;;;;;x
+huh_mayor_desc;Creates a new mayor Wilhelm. He will become commander.;;;;;;;;;;;;;x
+
+huh_vassal;----Create vassal;;;;;;;;;;;;;x
+huh_vassal_desc;Creates a new vassal Benedict. He will become commander.;;;;;;;;;;;;;x
+ 

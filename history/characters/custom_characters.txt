@@ -1,0 +1,427 @@
+# Custom characters to act as "family"
+#
+# People defined:
+#   Mata Hari and her parents and brothers
+#   James Bond with Ian Fleming as his "father"
+#   Ulysses S. Grant and his parents
+#   Joan of Arc
+#   Mr. Spock (LOL)
+#   Bob Ross (LMAO)
+#   Willem van Oranje (well sorta anyways heh)
+#
+# The dates used are fairly accurate, and in general only need an additional 1 in front
+# of the year to be valid. For the still living (Rowan/Alonso) the day before startdate
+# is used for their "death".
+#
+# Just remember, this is all for shits 'n giggles. It just started off as the main
+# characters being created, and now turned into some "family tree" in-game.
+# Also, everyone is catholic. Why? Because shut up that's why :)
+
+# Mata Hari
+1010000 = {
+	name = "Margaretha Geertruida"
+	female = yes
+	dynasty = 1010001
+	religion = "catholic"
+	culture = "dutch"
+	father = 1010001
+	mother = 1010002
+	disallow_random_traits = yes
+	add_trait = seductress
+	876.8.7 = {
+		birth = yes
+	}
+	918.10.15 = {
+		death = yes
+	}
+}
+
+# Mata Hari's father
+1010001 = {
+	name = "Adam"
+	female = no
+	dynasty = 1010001
+	religion = "catholic"
+	culture = "dutch"
+	disallow_random_traits = yes
+	840.8.2 = {
+		birth = yes
+	}
+	873.6.4 = {
+		add_spouse = 1010002
+	}
+	910.3.13 = {
+		death = yes
+	}
+}
+
+# Mata Hari's mother
+1010002 = {
+	name = "Antje"
+	female = yes
+	dynasty = 1010002
+	religion = "catholic"
+	culture = "dutch"
+	disallow_random_traits = yes
+	842.4.21 = {
+		birth = yes
+	}
+	891.5.9 = {
+		death = yes
+	}
+}
+
+# Mata Hari's brother
+1010003 = {
+	name = "Johannes Hendriks"
+	female = no
+	dynasty = 1010001
+	religion = "catholic"
+	culture = "dutch"
+	father = 1010001
+	mother = 1010002
+	disallow_random_traits = yes
+	878.11.26 = {
+		birth = yes
+	}
+	936.7.10 = {
+		death = yes
+	}
+}
+
+# Mata Hari's brother
+1010004 = {
+	name = "Arie Anne"
+	female = no
+	dynasty = 1010001
+	religion = "catholic"
+	culture = "dutch"
+	father = 1010001
+	mother = 1010002
+	disallow_random_traits = yes
+	881.8.9 = {
+		birth = yes
+	}
+	955.1.1 = {
+		death = yes
+	}
+}
+
+# Mata Hari's brother
+1010005 = {
+	name = "Cornelis Coenraad"
+	female = no
+	dynasty = 1010001
+	religion = "catholic"
+	culture = "dutch"
+	father = 1010001
+	mother = 1010002
+	disallow_random_traits = yes
+	881.8.9 = {
+		birth = yes
+	}
+	956.5.31 = {
+		death = yes
+	}
+}
+
+# James Bond
+1011000 = {
+	name = "James"
+	female = no
+	dynasty = 1011000
+	religion = "catholic"
+	culture = "english"
+	father = 1011001
+	disallow_random_traits = yes
+	add_trait = schemer
+	962.10.5 = {
+		# Release of Dr. No
+		birth = yes
+	}
+	1021.9.28 = {
+		# Release of No Time To Die
+		death = yes
+	}
+}
+
+# Ian Fleming as "fictive father" :)
+1011001 = {
+	name = "Ian"
+	female = no
+	dynasty = 100588
+	religion = "catholic"
+	culture = "english"
+	disallow_random_traits = yes
+	add_trait = administrator
+	908.5.28 = {
+		birth = yes
+	}
+	964.8.12 = {
+		death = yes
+	}
+}
+
+# Spock
+1012000 = {
+	name = "Spock"
+	female = no
+	#dynasty = 1012001
+	religion = logical
+	culture = vulkan
+	father = 1012001
+	disallow_random_traits = yes
+	add_trait = adventurer
+	965.1.22 = {
+		# Completion of The Cage
+		birth = yes
+		effect_even_if_dead = {
+			dynasty = none
+		}
+	}
+	991.11.4 = {
+		# Unification I
+		effect_even_if_dead = {
+			set_special_character_title = AMBASSADOR
+		}
+	}
+	1016.7.7 = {
+		# Star Trek Beyond
+		death = yes
+	}
+}
+
+# Leonard Nemoy as "fictive father"
+1012001 = {
+	name = "Leonard"
+	female = no
+	dynasty = 1012001
+	religion = catholic
+	culture = irish
+	disallow_random_traits = yes
+	add_trait = travelling
+	931.3.26 = {
+		birth = yes
+	}
+	1015.2.27 = {
+		death = yes
+	}
+}
+
+# Joan of Arc
+1013000 = {
+	name = "Jeanne"
+	female = yes
+	dynasty = 848
+	religion = "catholic"
+	culture = frankish
+	disallow_random_traits = yes
+	dna = "aaaaa0ga0a0"
+	properties = "0l000k"
+	412.1.1 = {
+		# Actual date is hard to find
+		birth = yes
+	}
+	431.5.30 = {
+		# This is neat, as the game provides a custom bit of text including the killer's name
+		death = {
+			death_reason = death_execution_burning
+			killer = 1013003
+		}
+	}
+	909.4.18 = {
+		# by Pope Pius X
+		effect_even_if_dead = {
+			add_trait = beatified
+			set_special_character_title = BLESSED_TITLE_FEMALE
+		}
+	}
+}
+
+# Killer of Joan
+1013003 = {
+	name = "Pierre"
+	female = no
+	dynasty = 1013001
+	religion = "catholic"
+	culture = frankish
+	disallow_random_traits = yes
+	371.1.1 = {
+		# Actual date is hard to find
+		birth = yes
+	}
+	442.12.18 = {
+		death = yes
+	}
+}
+
+# Ulysses S. Grant
+1014000 = {
+	name = "Ulysses S."
+	female = no
+	dynasty = 3132
+	religion = "catholic"
+	culture = breton
+	father = 1014001
+	mother = 1014002
+	disallow_random_traits = yes
+	add_trait = strategist
+	822.4.27 = {
+		birth = yes
+	}
+	885.7.23 = {
+		death = yes
+	}
+}
+
+# Ulysses S. Grant's father
+1014001 = {
+	name = "Jesse"
+	female = no
+	dynasty = 3132
+	religion = "catholic"
+	culture = breton
+	disallow_random_traits = yes
+	add_trait = pilgrim
+	794.1.23 = {
+		birth = yes
+	}
+	821.6.24 = {
+		add_spouse = 1014002
+	}
+	873.6.29 = {
+		death = yes
+	}
+}
+
+# Ulysses S. Grant's mother
+1014002 = {
+	name = "Hannah"
+	female = yes
+	dynasty = 1014002
+	religion = "catholic"
+	culture = breton
+	disallow_random_traits = yes
+	add_trait = pilgrim
+	798.11.23 = {
+		birth = yes
+	}
+	883.5.11 = {
+		death = yes
+	}
+}
+
+# Edmund Blackadder
+1015000 = {
+	name = "Edmund"
+	female = no
+	dynasty = 850
+	religion = "catholic"
+	culture = "english"
+	father = 1015001
+	disallow_random_traits = yes
+	add_trait = architect
+	983.6.15 = {
+		# Release of The Black Adder
+		birth = yes
+	}
+	989.11.2 = {
+		# Last episode of Blackadder Goes Forth
+		death = yes
+	}
+}
+
+# Rowan Atkinson as "fictive father"
+1015001 = {
+	name = "Rowan"
+	female = no
+	dynasty = 1015001
+	religion = "catholic"
+	culture = "english"
+	disallow_random_traits = yes
+	add_trait = socializer
+	955.1.6 = {
+		birth = yes
+	}
+	1066.9.14 = {
+		# Day before the middle era starts
+		death = yes
+	}
+}
+
+# Bob Ross
+1016000 = {
+	name = "Bob"
+	female = no
+	dynasty = 1031011
+	religion = "catholic"
+	culture = saxon
+	disallow_random_traits = yes
+	add_trait = gardener
+	942.10.29 = {
+		birth = yes
+	}
+	995.7.4 = {
+		death = yes
+	}
+}
+
+# William the Silent
+1017000 = {
+	name = "William"
+	female = no
+	dynasty = 263
+	religion = "catholic"
+	culture = german
+	father = 1017001
+	mother = 1017002
+	give_nickname = nick_the_silent
+	disallow_random_traits = yes
+	553.4.24 = {
+		birth = yes
+	}
+	584.7.10 = {
+		death = yes
+	}
+}
+
+# Count William I of Nassau-Siegen and Juliana of Stolberg.
+1017001 = {
+	name = "Wilhelm"
+	female = no
+	dynasty = 1017001
+	religion = "catholic"
+	culture = german
+	disallow_random_traits = yes
+	487.4.10 = {
+		birth = yes
+		effect_even_if_dead = {
+			set_special_character_title = count
+		}
+	}
+	531.9.20 = {
+		add_spouse = 1017002
+	}
+	559.10.6 = {
+		death = yes
+	}
+}
+
+1017002 = {
+	name = "Juliana"
+	female = yes
+	dynasty = 1017002
+	religion = "catholic"
+	culture = german
+	disallow_random_traits = yes
+	506.2.15 = {
+		birth = yes
+		effect_even_if_dead = {
+			set_special_character_title = count_female
+
+		}
+	}
+	580.6.18 = {
+		death = yes
+	}
+}

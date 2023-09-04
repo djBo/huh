@@ -1,0 +1,16 @@
+#
+#
+#
+
+extra_terrestial = {
+	graphical_cultures = { westerngfx }
+
+	vulkan = {
+		used_for_random = no
+		allow_in_ruler_designer = no
+		male_names = {
+			Spock
+		}
+	}
+
+}

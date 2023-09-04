@@ -1,0 +1,67 @@
+#
+# Treasurer Events
+#
+
+namespace = HUH
+
+# Treasurer dies
+character_event = {
+	id = HUH.41001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_treasurer
+
+	immediate = {
+		remove_trait = immortal
+		liege = {
+			character_event = { id = HUH.41002 }
+		}
+	}
+}
+
+character_event = {
+	id = HUH.41002
+	desc = EVTDESCHUH41002
+	picture = GFX_evt_death
+	border = GFX_event_normal_frame_economy
+
+	is_triggered_only = yes
+
+	ai = no
+	has_character_flag = huh_treasurer
+
+	immediate = {
+		clr_character_flag = huh_treasurer
+		FROM = {
+			clr_character_flag = is_huh_treasurer
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH01021
+	}
+}
+
+# Treasurer changes liege
+character_event = {
+	id = HUH.42001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_treasurer
+
+	trigger = {
+		NOT = { FROM = { character = no } }
+	}
+
+	immediate = {
+		clr_character_flag = is_huh_treasurer
+		remove_trait = immortal
+		FROM = {
+			clr_character_flag = huh_treasurer
+		}
+	}
+}

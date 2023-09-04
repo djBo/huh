@@ -1,0 +1,82 @@
+#
+# Maiden Events
+#
+
+namespace = HUH
+
+# Maiden dies
+character_event = {
+	id = HUH.71001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_maiden
+
+	trigger = {
+		NOT = { has_character_flag = is_huh_spouse }
+	}
+
+	immediate = {
+		remove_trait = immortal
+		any_artifact = { unsafe_destroy_artifact = yes }
+		liege = {
+			character_event = { id = HUH.71002 }
+		}
+	}
+}
+
+character_event = {
+	id = HUH.71002
+	desc = EVTDESCHUH71002
+	picture = GFX_evt_death
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	ai = no
+	has_character_flag = huh_maiden
+
+	immediate = {
+		clr_character_flag = huh_maiden
+		FROM = {
+			clr_character_flag = is_huh_maiden
+			if = {
+				limit = {
+					has_character_flag = is_huh_marshal
+				}
+				clr_character_flag = is_huh_marshal
+				ROOT = {
+					clr_character_flag = huh_marshal
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH01021
+	}
+}
+
+# Maiden changes liege
+character_event = {
+	id = HUH.72001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_maiden
+
+	trigger = {
+		NOT = { FROM = { character = no } }
+	}
+
+	immediate = {
+		clr_character_flag = is_huh_maiden
+		remove_trait = immortal
+		any_artifact = { unsafe_destroy_artifact = yes }
+		FROM = {
+			clr_character_flag = huh_maiden
+		}
+	}
+}

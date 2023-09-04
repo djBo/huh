@@ -1,0 +1,341 @@
+decisions = {
+
+	# show_huh = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		NOT = { has_character_flag = show_huh }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		set_character_flag = show_huh
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# hide_huh = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		clr_character_flag = show_huh
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_spouse = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		is_married = no
+	# 		NOT = { has_character_flag = huh_spymaster }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		character_event = { id = HUH.041 }
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_chancellor = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		NOT = { has_character_flag = huh_chancellor }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		huh_spawn_spock = yes
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_maiden = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		NOT = { has_character_flag = huh_marshal }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		huh_spawn_jeanne = yes
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_marshal = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		NOT = { has_character_flag = huh_marshal }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		huh_spawn_ulysses = yes
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_treasurer = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		NOT = { has_character_flag = huh_treasurer }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		huh_spawn_edmund = yes
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_spymaster = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		NOT = { has_character_flag = huh_spymaster }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		huh_spawn_james = yes
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_spiritual = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		NOT = { has_character_flag = huh_spiritual }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		huh_spawn_bob = yes
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_wife = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		is_married = no
+	# 		has_character_flag = huh_spymaster
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_commander = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		has_character_flag = huh_marshal
+	# 		NOT = { has_character_flag = huh_maiden }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		huh_spawn_jeanne = yes
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_mayor = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		NOT = { has_character_flag = huh_mayor }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		huh_spawn_wilhelm = yes
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_vassal = {
+
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 		has_character_flag = show_huh
+	# 		NOT = { has_character_flag = huh_vassal }
+	# 	}
+
+	# 	allow = {
+	# 		always = yes
+	# 	}
+
+	# 	effect = {
+	# 		huh_spawn_benedict = yes
+	# 	}
+
+	# 	revoke_allowed = {
+	# 		always = no
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+}

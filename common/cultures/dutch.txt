@@ -1,0 +1,10 @@
+west_germanic = {
+	dutch = {
+		male_patronym = ""
+		female_patronym = ""
+	}
+	saxon = {
+		male_patronym = ""
+		female_patronym = ""
+	}
+}

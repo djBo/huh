@@ -1,0 +1,40 @@
+on_chronicle_start = {
+	events = {
+		HUH.00001
+	}
+}
+
+on_death = {
+	events = {
+		HUH.11001
+		HUH.21001
+		HUH.31001
+		HUH.41001
+		HUH.51001
+		HUH.61001
+		HUH.71001
+		HUH.81001
+		HUH.91001
+	}
+}
+
+on_employer_change = {
+	events = {
+		HUH.12001
+		HUH.22001
+		HUH.32001
+		HUH.42001
+		HUH.52001
+		HUH.62001
+		HUH.72001
+		HUH.82001
+		HUH.92001
+	}
+}
+
+on_pregnancy = {
+	events = {
+		HUH.03001
+		HUH.13001
+	}
+}

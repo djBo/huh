@@ -1,0 +1,66 @@
+#
+# Vassal Events
+#
+
+namespace = HUH
+
+# Vassal dies
+character_event = {
+	id = HUH.91001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_vassal
+
+	immediate = {
+		remove_trait = immortal
+		liege = {
+			character_event = { id = HUH.91002 }
+		}
+	}
+}
+
+character_event = {
+	id = HUH.91002
+	desc = EVTDESCHUH91002
+	picture = GFX_evt_death
+
+	is_triggered_only = yes
+
+	ai = no
+	has_character_flag = huh_vassal
+
+	immediate = {
+		clr_character_flag = huh_vassal
+		FROM = {
+			clr_character_flag = is_huh_vassal
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH01021
+	}
+}
+
+# Vassal changes liege
+character_event = {
+	id = HUH.92001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_vassal
+
+	trigger = {
+		NOT = { FROM = { character = no } }
+	}
+
+	immediate = {
+		clr_character_flag = is_huh_vassal
+		remove_trait = immortal
+		FROM = {
+			clr_character_flag = huh_vassal
+		}
+	}
+}

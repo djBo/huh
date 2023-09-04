@@ -1,0 +1,7 @@
+516.1.1 = {
+	holder = 1017001
+	name = COUNTY_NASSAU
+}
+965.1.1 = {
+	holy_site = vulkan
+}

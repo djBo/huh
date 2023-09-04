@@ -1,0 +1,647 @@
+#
+#
+#
+
+huh_spawn_mata = {
+	create_character = {
+		random_traits = no
+		name = "Margaretha Geertruida Zelle"
+		dynasty = none
+		employer = FROM
+		religion = FROM
+		culture = dutch
+		female = yes
+		age = 16
+		health = 14
+		fertility = 1
+		dna = aaaaa0aaaa0
+
+		attributes = {
+			diplomacy = 5
+			martial = 11
+			stewardship = 13
+			intrigue = 54
+			learning = 13
+		}
+
+		add_trait = elusive_shadow
+
+		add_trait = fair
+		add_trait = genius
+		add_trait = strong
+
+		add_trait = schemer
+		add_trait = shrewd
+
+		add_trait = chaste
+		add_trait = temperate
+		add_trait = charitable
+		add_trait = diligent
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+
+		add_trait = ambitious
+	}
+	hidden_tooltip = {
+		new_character = {
+			set_mother = 1010000
+			set_name = "Mata Hari"
+			# set_focus = focus_seduction
+			add_artifact = celestial_necklace_2
+			add_artifact = ruby_bracelets_2
+		}
+	}
+}
+
+huh_spawn_james = {
+	create_character = {
+		random_traits = no
+		name = "James"
+		dynasty = 1011000
+		employer = FROM
+		religion = FROM
+		culture = english
+		female = no
+		age = 16
+		health = 14
+		fertility = 0
+		dna = aaaaa0aaaa0
+
+		attributes = {
+			diplomacy = 9
+			martial = 13
+			stewardship = 15
+			intrigue = 51
+			learning = 15
+		}
+
+		add_trait = elusive_shadow
+
+		add_trait = fair
+		add_trait = genius
+		add_trait = strong
+
+		add_trait = schemer
+		add_trait = shrewd
+
+		add_trait = chaste
+		add_trait = temperate
+		add_trait = charitable
+		add_trait = diligent
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+
+		add_trait = cynical
+		add_trait = deceitful
+	}
+	hidden_tooltip = {
+		new_character = {
+			set_father = 1011000
+			# set_focus = focus_intrigue
+		}
+	}
+}
+
+huh_spawn_spock = {
+	create_character = {
+		random_traits = no
+		name = "Spock"
+		dynasty = none
+		employer = FROM
+		religion = FROM
+		culture = vulkan
+		female = no
+		age = 16
+		health = 14
+		fertility = 0
+		dna = aaaaa0aaaa0
+
+		attributes = {
+			diplomacy = 42
+			martial = 16
+			stewardship = 14
+			intrigue = 18
+			learning = 13
+		}
+
+		add_trait = grey_eminence
+
+		add_trait = fair
+		add_trait = genius
+		add_trait = strong
+
+		add_trait = socializer
+		add_trait = shrewd
+
+		add_trait = chaste
+		add_trait = temperate
+		add_trait = charitable
+		add_trait = diligent
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+
+		add_trait = gregarious
+		add_trait = honest
+	}
+	hidden_tooltip = {
+		new_character = {
+			set_father = 1012000
+			# set_focus = focus_family
+			set_special_character_title = MISTER
+		}
+	}
+}
+
+huh_spawn_jeanne = {
+	create_character = {
+		random_traits = no
+		name = "Jeanne"
+		dynasty = 848
+		employer = FROM
+		religion = FROM
+		culture = frankish
+		female = yes
+		age = 16
+		health = 12.5
+		fertility = 0
+		dna = aaaaa0ga0a0
+		flag = is_huh_maiden
+
+		attributes = {
+			diplomacy = 3
+			martial = 38
+			stewardship = 10
+			intrigue = 17
+			learning = 14
+		}
+
+		#add_trait = brilliant_strategist
+		add_trait = skilled_tactician
+		#add_trait = mastermind
+		add_trait = holy_warrior
+		add_trait = shieldmaiden
+		add_trait = homosexual
+
+		add_trait = fair
+		add_trait = genius
+		add_trait = strong
+		add_trait = freckles
+		add_trait = lefthanded
+		add_trait = robust
+
+		add_trait = duelist
+		add_trait = shrewd
+
+		add_trait = hunter
+		add_trait = strategist
+
+		add_trait = adventurer
+
+		add_trait = chaste
+		add_trait = temperate
+		add_trait = charitable
+		add_trait = diligent
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+
+		add_trait = ambitious
+		add_trait = brave
+		add_trait = zealous
+		add_trait = honest
+	}
+	hidden_tooltip = {
+		new_character = {
+			set_mother = 1013000
+			set_focus = focus_war
+			add_artifact = armor_tier_4_guardian
+			add_artifact = sword_great_conqueror
+		}
+	}
+}
+
+huh_spawn_ulysses = {
+	create_character = {
+		random_traits = no
+		name = "Ulysses S."
+		dynasty = 3132
+		employer = FROM
+		religion = FROM
+		culture = breton
+		female = no
+		age = 16
+		health = 12.5
+		fertility = 0
+		dna = aaaaa0aaaa0
+
+		attributes = {
+			diplomacy = 9
+			martial = 49
+			stewardship = 12
+			intrigue = 16
+			learning = 16
+		}
+
+		add_trait = brilliant_strategist
+
+		add_trait = fair
+		add_trait = genius
+		add_trait = strong
+
+		add_trait = duelist
+		add_trait = shrewd
+
+		add_trait = chaste
+		add_trait = temperate
+		add_trait = charitable
+		add_trait = diligent
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+
+		add_trait = brave
+		add_trait = zealous
+	}
+	hidden_tooltip = {
+		new_character = {
+			set_father = 1014000
+			# set_focus = focus_hunting
+		}
+	}
+}
+
+huh_spawn_edmund = {
+	create_character = {
+		random_traits = no
+		name = "Edmund"
+		dynasty = 850
+		employer = FROM
+		religion = FROM
+		culture = scottish
+		female = no
+		age = 16
+		health = 14
+		fertility = 0
+		dna = aaaaa0aaaa0
+
+		attributes = {
+			diplomacy = 11
+			martial = 13
+			stewardship = 49
+			intrigue = 18
+			learning = 12
+		}
+
+		add_trait = midas_touched
+
+		add_trait = fair
+		add_trait = genius
+		add_trait = strong
+
+		add_trait = administrator
+		add_trait = shrewd
+
+		add_trait = chaste
+		add_trait = temperate
+		add_trait = charitable
+		add_trait = diligent
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+
+		add_trait = just
+		add_trait = stubborn
+	}
+	hidden_tooltip = {
+		new_character = {
+			set_father = 1015001
+			# set_focus = focus_business
+		}
+	}
+}
+
+huh_spawn_bob = {
+	create_character = {
+		random_traits = no
+		name = "Bob"
+		dynasty = 1031011
+		employer = FROM
+		religion = FROM
+		culture = saxon
+		female = no
+		age = 16
+		health = 14
+		fertility = 0
+		dna = aaaaa0aaaa0
+
+		attributes = {
+			diplomacy = 6
+			martial = 15
+			stewardship = 10
+			intrigue = 19
+			learning = 48
+		}
+
+		add_trait = mastermind_theologian
+		add_trait = physician
+
+		add_trait = fair
+		add_trait = genius
+		add_trait = strong
+
+		add_trait = scholar
+		add_trait = shrewd
+
+		add_trait = chaste
+		add_trait = temperate
+		add_trait = charitable
+		add_trait = diligent
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+
+		add_trait = erudite
+		add_trait = just
+	}
+	hidden_tooltip = {
+		new_character = {
+			set_father = 1016000
+			# set_focus = focus_theology
+		}
+	}
+}
+
+huh_spawn_wilhelm = {
+	create_character = {
+		random_traits = no
+		name = "Wilhelm"
+		dynasty = 263
+		employer = FROM
+		religion = FROM
+		culture = german
+		female = no
+		age = 16
+		health = 14
+		fertility = 0
+		dna = aaaaa0aaaa0
+
+		attributes = {
+			diplomacy = 11
+			martial = 13
+			stewardship = 28
+			intrigue = 18
+			learning = 13
+		}
+
+		add_trait = fortune_builder
+
+		add_trait = fair
+		add_trait = genius
+		add_trait = strong
+
+		add_trait = architect
+		add_trait = shrewd
+
+		add_trait = chaste
+		add_trait = temperate
+		add_trait = charitable
+		add_trait = diligent
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+
+		add_trait = just
+		add_trait = stubborn
+	}
+	hidden_tooltip = {
+		new_character = {
+			set_father = 1017000
+			# set_focus = focus_war
+		}
+	}
+}
+
+huh_spawn_benedict = {
+	create_character = {
+		random_traits = no
+		name = "Benedict"
+		dynasty = 13049
+		employer = FROM
+		religion = FROM
+		culture = italian
+		female = no
+		age = 16
+		health = 14
+		fertility = 0
+		dna = aaaaa0aaaa0
+
+		attributes = {
+			diplomacy = 5
+			martial = 15
+			stewardship = 13
+			intrigue = 21
+			learning = 32
+		}
+
+		add_trait = scholarly_theologian
+
+		add_trait = fair
+		add_trait = genius
+		add_trait = strong
+
+		add_trait = theologian
+		add_trait = shrewd
+
+		add_trait = chaste
+		add_trait = temperate
+		add_trait = charitable
+		add_trait = diligent
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+
+		add_trait = content
+		add_trait = honest
+	}
+	hidden_tooltip = {
+		new_character = {
+			set_father = 7876 # Pope Benedict II
+			# set_focus = focus_war
+		}
+	}
+}
+
+huh_neut_character = {
+	add_character_modifier = {
+		name = will_not_marry
+		duration = -1
+		hidden = yes
+	}
+	add_trait = cannot_marry
+	add_trait = celibate
+	if = {
+		limit = { is_female = yes }
+		add_trait = nun
+	}
+	if = {
+		limit = { is_female = no}
+		add_trait = monk
+	}
+}
+
+huh_marry_spouse = {
+	set_character_flag = is_huh_spouse
+	if = {
+		limit = { is_female = yes }
+		add_spouse = FROM
+	}
+	if = {
+		limit = { is_female = no }
+		add_spouse_matrilineal = FROM
+	}
+	remove_trait = homosexual
+	remove_trait = chaste
+	change_intrigue = -1
+	add_trait = lustful
+	change_learning = 1
+}
+
+huh_fire_all = {
+	# Fire all commanders
+	any_courtier_or_vassal = {
+		limit = {
+			has_minor_title = title_commander
+		}
+		log = "Commander [This.GetBestName]"
+		remove_title = title_commander
+	}
+	# Fire counsil
+	job_chancellor = {
+		log = "Chancellor [This.GetBestName]"
+		remove_title = job_chancellor
+	}
+	job_marshal = {
+		log = "Marshal [This.GetBestName]"
+		remove_title = job_marshal
+	}
+	job_treasurer = {
+		log = "Treasurer [This.GetBestName]"
+		remove_title = job_treasurer
+	}
+	job_spymaster = {
+		log = "Spymaster [This.GetBestName]"
+		remove_title = job_spymaster
+	}
+	job_spiritual = {
+		log = "Spiritual [This.GetBestName]"
+		remove_title = job_spiritual
+	}
+	# Fire advisor 1
+	any_courtier_or_vassal = {
+		limit = {
+			has_minor_title = title_councilmember_king
+		}
+		log = "Advisor I [This.GetBestName]"
+		remove_title = title_councilmember_king
+	}
+	# Fire advisor 2
+	any_courtier_or_vassal = {
+		limit = {
+			has_minor_title = title_councilmember_emperor
+		}
+		log = "Advisor II [This.GetBestName]"
+		remove_title = title_councilmember_emperor
+	}
+}
+
+huh_happy_all = {
+
+	any_courtier_or_vassal = {
+		limit = {
+			OR = {
+				has_character_flag = is_huh_spouse
+				has_character_flag = is_huh_chancellor
+				has_character_flag = is_huh_marshal
+				has_character_flag = is_huh_treasurer
+				has_character_flag = is_huh_spymaster
+				has_character_flag = is_huh_spiritual
+				has_character_flag = is_huh_maiden
+				has_character_flag = is_huh_mayor
+				has_character_flag = is_huh_vassal
+			}
+		}
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					add_character_modifier = {
+						modifier = likes_cats
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						modifier = likes_dogs
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						modifier = likes_hedgehogs
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+
+}
+
+huh_sad_all = {
+	any_courtier_or_vassal = {
+		limit = {
+			OR = {
+				has_character_flag = is_huh_spouse
+				has_character_flag = is_huh_chancellor
+				has_character_flag = is_huh_marshal
+				has_character_flag = is_huh_treasurer
+				has_character_flag = is_huh_spymaster
+				has_character_flag = is_huh_spiritual
+				has_character_flag = is_huh_maiden
+				has_character_flag = is_huh_mayor
+				has_character_flag = is_huh_vassal
+			}
+		}
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = sad_panda
+				duration = -1
+			}
+		}
+	}
+
+}
+
+huh_immortal_all = {
+	any_courtier_or_vassal = {
+		limit = {
+			OR = {
+				has_character_flag = is_huh_spouse
+				has_character_flag = is_huh_chancellor
+				has_character_flag = is_huh_marshal
+				has_character_flag = is_huh_treasurer
+				has_character_flag = is_huh_spymaster
+				has_character_flag = is_huh_spiritual
+				has_character_flag = is_huh_maiden
+				has_character_flag = is_huh_mayor
+				has_character_flag = is_huh_vassal
+			}
+		}
+		hidden_tooltip = {
+			add_trait = immortal
+		}
+	}
+
+}

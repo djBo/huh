@@ -1,0 +1,29 @@
+
+likes_cats = {
+	general_opinion = 10000
+	icon = 46
+}
+
+likes_dogs = {
+	general_opinion = 10000
+	icon = 45
+}
+
+likes_hedgehogs = {
+	general_opinion = 10000
+	icon = 93
+}
+
+likes_flowers = {
+	general_opinion = 10000
+	icon = 87
+}
+
+sad_panda = {
+	icon = 108
+}
+
+magnificent = {
+	demesne_size = 100
+	icon = 11
+}

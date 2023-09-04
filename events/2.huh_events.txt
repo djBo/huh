@@ -1,0 +1,67 @@
+#
+# Chancellor Events
+#
+
+namespace = HUH
+
+# Chancellor dies
+character_event = {
+	id = HUH.21001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_chancellor
+
+	immediate = {
+		remove_trait = immortal
+		liege = {
+			character_event = { id = HUH.21002 }
+		}
+	}
+}
+
+character_event = {
+	id = HUH.21002
+	desc = EVTDESCHUH21002
+	picture = GFX_evt_death
+	border = GFX_event_normal_frame_diplomacy
+
+	is_triggered_only = yes
+
+	ai = no
+	has_character_flag = huh_chancellor
+
+	immediate = {
+		clr_character_flag = huh_chancellor
+		FROM = {
+			clr_character_flag = is_huh_chancellor
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH01021
+	}
+}
+
+# Chancellor changes liege
+character_event = {
+	id = HUH.22001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_chancellor
+
+	trigger = {
+		NOT = { FROM = { character = no } }
+	}
+
+	immediate = {
+		clr_character_flag = is_huh_chancellor
+		remove_trait = immortal
+		FROM = {
+			clr_character_flag = huh_chancellor
+		}
+	}
+}

@@ -1,0 +1,759 @@
+#
+# Mod/Player Events
+#
+
+# HUH.ce0iiii
+# EVTDESCHUHce0iiii
+# EVTOPTHUHceiiiin
+#     c = character
+#     e = event
+#     i = index
+#
+#
+# characters
+# 0 = player
+# 1 = spouse
+# 2 = chancellor
+# 3 = marshal
+# 4 = treasurer
+# 5 = spymaster
+# 6 = spiritual
+# 7 = maiden
+# 8 = mayor
+# 9 = vassal
+#
+# events
+# 0 = birth*
+# 1 = death
+# 2 = employer changed
+# 3 = on_pregnancy
+# 4 = marriage
+# 5 = job assignment
+# index starts at 1, where 2 is the window shown to the player
+#
+
+namespace = HUH
+
+# Start of the game, one-shot to enable the mod
+narrative_event = {
+	id = HUH.00001
+	title = HUH00001
+	desc = EVTDESCHUH00001
+
+	is_triggered_only = yes
+
+	ai = no
+
+	trigger = {
+		has_game_started = yes
+	}
+
+	option = {
+		name = EVTOPTHUH00011
+		set_global_flag = huh
+		set_character_flag = huh_enabled
+	}
+
+	option = {
+		name = EVTOPTHUH00012
+	}
+
+	after = {
+		if = {
+			limit = { has_global_flag = huh }
+			huh_fire_all = yes
+			character_event = { id = HUH.00002 }
+		}
+	}
+
+}
+
+# A new spouse
+character_event = {
+	id = HUH.00002
+	desc = EVTDESCHUH00002
+	picture = GFX_evt_marriage
+	sound = click
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+		set_character_flag = huh_spouse
+	}
+
+	option = {
+		name = EVTOPTHUH00021
+		trigger = { is_female = no }
+		huh_spawn_mata = yes
+	}
+	option = {
+		name = EVTOPTHUH00022
+		trigger = { is_female = no }
+		set_character_flag = huh_maiden
+		huh_spawn_jeanne = yes
+	}
+	option = {
+		name = EVTOPTHUH00023
+		trigger = { is_female = yes }
+		huh_spawn_james = yes
+	}
+	option = {
+		name = EVTOPTHUH00024
+		trigger = { is_married = yes }
+		clr_character_flag = huh_spouse
+	}
+	option = {
+		name = CHANGED_MIND # MonksAndMystics.csv
+		trigger = { is_married = no }
+		clr_character_flag = huh_spouse
+	}
+
+	after = {
+		hidden_tooltip = {
+			if = {
+				limit = { has_character_flag = huh_spouse }
+				if = {
+					limit = { is_married = yes }
+					remove_spouse = yes
+				}
+				new_character = {
+					huh_marry_spouse = yes
+				}
+			}
+		}
+		character_event = { id = HUH.00003 }
+	}
+
+}
+
+# A new chancellor
+character_event = {
+	id = HUH.00003
+	desc = EVTDESCHUH00003
+	border = GFX_event_normal_frame_diplomacy # blue like the default
+	picture = GFX_evt_council
+	sound = click
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+		set_character_flag = huh_chancellor
+	}
+
+	option = {
+		name = EVTOPTHUH00031
+		huh_spawn_spock = yes
+		hidden_tooltip = {
+			new_character = {
+				set_character_flag = is_huh_chancellor
+				give_job_title = job_chancellor
+				huh_neut_character = yes
+			}
+		}
+	}
+
+	after = {
+		character_event = { id = HUH.00004 }
+	}
+
+}
+
+# A new marshal
+character_event = {
+	id = HUH.00004
+	desc = EVTDESCHUH00004
+	border = GFX_event_normal_frame_war # red
+	picture = GFX_evt_battle
+	sound = click
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+		set_character_flag = huh_marshal
+	}
+
+	option = {
+		name = EVTOPTHUH00041
+		huh_spawn_ulysses = yes
+		hidden_tooltip = {
+			new_character = {
+				set_character_flag = is_huh_marshal
+				give_job_title = job_marshal
+				huh_neut_character = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTHUH00042
+		trigger = {
+			NOT = { has_character_flag = huh_maiden }
+		}
+		set_character_flag = huh_maiden
+		huh_spawn_jeanne = yes
+		hidden_tooltip = {
+			new_character = {
+				set_character_flag = is_huh_marshal
+				give_job_title = job_marshal
+				huh_neut_character = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTHUH00043
+		tooltip_info_custom = EVTOPTHUH00043_INFO
+		trigger = {
+			is_female = no
+			is_married = yes
+			spouse = {
+				has_character_flag = is_huh_maiden
+			}
+		}
+		spouse = {
+			set_character_flag = is_huh_marshal
+			give_job_title = job_marshal
+		}
+	}
+
+	after = {
+		character_event = { id = HUH.00005 }
+	}
+
+}
+
+# A new treasurer
+character_event = {
+	id = HUH.00005
+	desc = EVTDESCHUH00005
+	border = GFX_event_normal_frame_economy # green
+	picture = GFX_evt_market
+	sound = click
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+		set_character_flag = huh_treasurer
+	}
+
+	option = {
+		name = EVTOPTHUH00051
+		huh_spawn_edmund = yes
+		hidden_tooltip = {
+			new_character = {
+				set_character_flag = is_huh_treasurer
+				give_job_title = job_treasurer
+				huh_neut_character = yes
+			}
+		}
+	}
+
+	after = {
+		character_event = { id = HUH.00006 }
+	}
+
+}
+
+# A new spymaster
+character_event = {
+	id = HUH.00006
+	desc = EVTDESCHUH00006
+	border = GFX_event_normal_frame_intrigue # purple
+	picture = GFX_evt_spymaster
+	sound = click
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+		set_character_flag = huh_spymaster
+	}
+
+	option = {
+		name = EVTOPTHUH00061
+		trigger = {
+			OR = {
+				is_female = no
+				AND = {
+					is_female = yes
+					spouse = {
+						intrigue < 50
+					}
+				}
+			}
+		}
+		huh_spawn_james = yes
+		hidden_tooltip = {
+			new_character = {
+				set_character_flag = is_huh_spymaster
+				give_job_title = job_spymaster
+				huh_neut_character = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTHUH00062
+		trigger = {
+			OR = {
+				is_female = yes
+				AND = {
+					is_female = no
+					spouse = {
+						intrigue < 50
+					}
+				}
+			}
+		}
+		huh_spawn_mata = yes
+		hidden_tooltip = {
+			new_character = {
+				set_character_flag = is_huh_spymaster
+				give_job_title = job_spymaster
+				huh_neut_character = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTHUH00063
+		tooltip_info_custom = EVTOPTHUH00063_INFO
+		trigger = {
+			spouse = {
+				intrigue >= 50
+			}
+		}
+		spouse = {
+			set_character_flag = is_huh_spymaster
+			give_job_title = job_spymaster
+		}
+	}
+
+	after = {
+		character_event = { id = HUH.00007 }
+	}
+
+}
+
+# A new spiritual
+character_event = {
+	id = HUH.00007
+	desc = EVTDESCHUH00007
+	picture = GFX_evt_emissary
+	sound = click
+	border = GFX_event_normal_frame_religion # white
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+		set_character_flag = huh_spiritual
+	}
+
+	option = {
+		name = EVTOPTHUH00071
+		huh_spawn_bob = yes
+		hidden_tooltip = {
+			new_character = {
+				set_character_flag = is_huh_spiritual
+				give_job_title = job_spiritual
+				huh_neut_character = yes
+			}
+		}
+	}
+
+	after = {
+		character_event = { id = HUH.00008 }
+	}
+
+}
+
+# A new commander
+character_event = {
+	id = HUH.00008
+	desc = EVTDESCHUH00008
+	picture = GFX_evt_melee
+	sound = click
+	border = GFX_event_normal_frame_war
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+	}
+
+	option = {
+		name = EVTOPTHUH00081
+		trigger = {
+			NOT = { has_character_flag = huh_maiden }
+		}
+		set_character_flag = huh_maiden
+		huh_spawn_jeanne = yes
+		hidden_tooltip = {
+			new_character = {
+				unsafe_give_minor_title = title_commander
+				huh_neut_character = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTHUH00082
+		tooltip_info_custom = EVTOPTHUH00082_INFO
+		trigger = {
+			has_character_flag = huh_maiden
+			spouse = {
+				martial >= 50
+				NOT = { has_character_flag = is_huh_marshal }
+			}
+		}
+		spouse = {
+			unsafe_give_minor_title = title_commander
+		}
+	}
+	option = {
+		name = EVTOPTHUH00083
+		trigger = {
+			has_character_flag = huh_maiden
+			spouse = {
+				has_character_flag = is_huh_marshal
+			}
+		}
+	}
+	option = {
+		name = EVTOPTHUH00084
+		trigger = {
+			is_female = yes
+			has_character_flag = huh_maiden
+		}
+	}
+
+	after = {
+		character_event = { id = HUH.00009 }
+	}
+
+}
+
+# A new mayor
+character_event = {
+	id = HUH.00009
+	desc = EVTDESCHUH00009
+	picture = GFX_evt_throne_room
+	sound = click
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+		set_character_flag = huh_mayor
+	}
+
+	option = {
+		name = EVTOPTHUH00091
+		huh_spawn_wilhelm = yes
+		hidden_tooltip = {
+			new_character = {
+				set_character_flag = is_huh_mayor
+				unsafe_give_minor_title = title_commander
+				huh_neut_character = yes
+			}
+		}
+	}
+
+	after = {
+		character_event = { id = HUH.00010 }
+	}
+
+}
+
+# A new vassal
+character_event = {
+	id = HUH.00010
+	desc = EVTDESCHUH00010
+	picture = GFX_evt_monk
+	sound = click
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+		set_character_flag = huh_vassal
+	}
+
+	option = {
+		name = EVTOPTHUH00101
+		huh_spawn_benedict = yes
+		hidden_tooltip = {
+			new_character = {
+				set_character_flag = is_huh_vassal
+				unsafe_give_minor_title = title_commander
+				# huh_neut_character = yes
+			}
+		}
+	}
+
+	after = {
+		character_event = { id = HUH.00011 }
+	}
+
+}
+
+# Animal choice
+character_event = {
+	id = HUH.00011
+	desc = EVTDESCHUH00011
+	border = GFX_event_normal_frame_intrigue
+	picture = GFX_evt_lunatic
+	sound = click
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+	}
+
+	option = {
+		name = EVTOPTHUH00111
+		add_character_modifier = {
+			modifier = likes_cats
+			duration = -1
+		}
+		character_event = { id = HUH.00014 }
+	}
+	option = {
+		name = EVTOPTHUH00112
+		add_character_modifier = {
+			modifier = likes_dogs
+			duration = -1
+		}
+		character_event = { id = HUH.00014 }
+	}
+	option = {
+		name = EVTOPTHUH00113
+		add_character_modifier = {
+			modifier = likes_hedgehogs
+			duration = -1
+		}
+		character_event = { id = HUH.00014 }
+	}
+	option = {
+		name = EVTOPTHUH00114
+		character_event = { id = HUH.00012 }
+	}
+
+	after = {
+		#character_event = { id = HUH.00011 }
+	}
+
+}
+
+# Flower choice
+character_event = {
+	id = HUH.00012
+	desc = EVTDESCHUH00012
+	border = GFX_event_normal_frame_economy
+	picture = GFX_evt_garden
+	sound = click
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+	}
+
+	option = {
+		name = EVTOPTHUH00121
+		tooltip_info_custom = EVTOPTHUH00121_INFO
+		add_character_modifier = {
+			modifier = likes_flowers
+			duration = -1
+		}
+		character_event = { id = HUH.00014 }
+	}
+	option = {
+		name = EVTOPTHUH00122
+		character_event = { id = HUH.00013 }
+	}
+
+	after = {
+		
+	}
+
+}
+
+# Sad panda choice
+character_event = {
+	id = HUH.00013
+	desc = EVTDESCHUH00013
+	border = GFX_event_normal_frame_war
+	picture = GFX_evt_child_bully
+	sound = click
+	hide_new = yes
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+	}
+
+	option = {
+		name = EVTOPTHUH00131
+		tooltip_info_custom = EVTOPTHUH00131_INFO
+		add_character_modifier = {
+			modifier = sad_panda
+			duration = -1
+		}
+	}
+
+	after = {
+		character_event = { id = HUH.00014 }
+	}
+
+}
+
+# Improvement choice
+character_event = {
+	id = HUH.00014
+	# picture = GFX_evt_crusaders
+	border = GFX_event_normal_frame_religion
+	picture = GFX_evt_cat
+	sound = click
+	hide_new = yes
+
+	desc = {
+		trigger = { has_character_modifier = sad_panda }
+		text = EVTDESCHUH00014A
+	}
+	desc = {
+		trigger = { has_character_modifier = likes_flowers }
+		text = EVTDESCHUH00014B
+	}
+	desc = {
+		text = EVTDESCHUH00014C
+	}
+
+	is_triggered_only = yes
+
+	ai = no
+	has_global_flag = huh
+
+	immediate = {
+		if = {
+			limit = { has_character_modifier = sad_panda }
+			huh_sad_all = yes
+		}
+		if = {
+			limit = { NOT = { has_character_modifier = sad_panda } }
+			huh_happy_all = yes
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH00141
+		#show_trait = immortal
+		add_trait = immortal
+		hidden_tooltip = {
+			huh_immortal_all = yes
+			add_character_modifier = {
+				modifier = magnificent
+				duration = -1
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH00012
+	}
+
+	after = {
+		#character_event = { id = HUH.00011 }
+	}
+
+}
+
+# Test event triggering
+# character_event = {
+# 	id = HUH.00015
+# 	hide_window = yes
+
+# 	ai = no
+# 	has_character_flag = huh_enabled
+
+# 	mean_time_to_happen = {
+# 		days = 7
+# 	}
+
+# 	immediate = {
+# 		log = "HUH.00015 [Root.GetBestName]"
+# 	}
+# }
+
+
+
+
+
+# You get pregnant
+character_event = {
+	id = HUH.03001
+	desc = EVTDESCHUH03001
+	picture = GFX_evt_pregnancy
+
+	is_triggered_only = yes
+	
+	ai = no
+	only_women = yes
+	has_character_flag = huh_spouse
+
+	trigger = {
+		num_of_children >= 9
+	}
+
+	immediate = {
+		export_to_variable = {
+			which = local_child_count
+			value = num_of_children
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH03011
+		add_trait = celibate
+	}
+
+	option = {
+		name = EVTOPTHUH03012
+	}
+}

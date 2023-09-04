@@ -1,0 +1,60 @@
+spriteTypes = {
+  spriteType = {
+    name = "GFX_show_huh"
+    texturefile = "gfx\\interface\\decision_icon_arrow_right.dds"
+  }
+  spriteType = {
+    name = "GFX_hide_huh"
+    texturefile = "gfx\\interface\\decision_icon_arrow_left.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_chancellor"
+    texturefile = "gfx\\interface\\decision_icon_chancellor.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_maiden"
+    texturefile = "gfx\\interface\\decision_icon_shieldmaiden.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_marshal"
+    texturefile = "gfx\\interface\\decision_icon_marshal.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_treasurer"
+    texturefile = "gfx\\interface\\decision_icon_treasurer.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_spymaster"
+    texturefile = "gfx\\interface\\decision_icon_spymaster.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_spiritual"
+    texturefile = "gfx\\interface\\decision_icon_spiritual.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_wife"
+    texturefile = "gfx\\interface\\decision_icon_wife.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_spouse"
+    texturefile = "gfx\\interface\\decision_icon_wifespy.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_commander"
+    texturefile = "gfx\\interface\\decision_icon_maiden.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_mayor"
+    texturefile = "gfx\\interface\\decision_icon_mayor.dds"
+  }
+  spriteType = {
+    name = "GFX_huh_vassal"
+    texturefile = "gfx\\interface\\decision_icon_vasal.dds"
+  }
+
+  spriteType = {
+    name = "GFX_evt_cat"
+    texturefile = "gfx\\event_pictures\\cat.dds"
+  }
+
+}

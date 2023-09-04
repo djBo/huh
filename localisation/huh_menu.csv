@@ -1,0 +1,17 @@
+huh_enable;Enable Huh;;;;;;;;;;;;;x
+huh_enable_desc;Enables Huh.;;;;;;;;;;;;;x
+
+huh_disable;Disable Huh;;;;;;;;;;;;;x
+huh_disable_desc;Disables Huh.;;;;;;;;;;;;;x
+
+huh_fire;Fire all;;;;;;;;;;;;;x
+huh_fire_desc;Fire all your commanders, counsil and advisors.;;;;;;;;;;;;;x
+
+huh_reset;Reset Huh;;;;;;;;;;;;;x
+huh_reset_desc;Resets Huh.;;;;;;;;;;;;;x
+
+huh_reset_them;Huh...;;;;;;;;;;;;;x
+huh_reset_them_desc;Resets this person.;;;;;;;;;;;;;x
+
+huh_restore_them;Huh?;;;;;;;;;;;;;x
+huh_restore_them_desc;Restores this person.;;;;;;;;;;;;;x

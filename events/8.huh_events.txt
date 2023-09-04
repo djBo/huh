@@ -1,0 +1,66 @@
+#
+# Mayor Events
+#
+
+namespace = HUH
+
+# Mayor dies
+character_event = {
+	id = HUH.81001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_mayor
+
+	immediate = {
+		remove_trait = immortal
+		liege = {
+			character_event = { id = HUH.81002 }
+		}
+	}
+}
+
+character_event = {
+	id = HUH.81002
+	desc = EVTDESCHUH81002
+	picture = GFX_evt_death
+
+	is_triggered_only = yes
+
+	ai = no
+	has_character_flag = huh_mayor
+
+	immediate = {
+		clr_character_flag = huh_mayor
+		FROM = {
+			clr_character_flag = is_huh_mayor
+		}
+	}
+
+	option = {
+		name = EVTOPTHUH01021
+	}
+}
+
+# Mayor changes liege
+character_event = {
+	id = HUH.82001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	has_character_flag = is_huh_mayor
+
+	trigger = {
+		NOT = { FROM = { character = no } }
+	}
+
+	immediate = {
+		clr_character_flag = is_huh_mayor
+		remove_trait = immortal
+		FROM = {
+			clr_character_flag = huh_mayor
+		}
+	}
+}

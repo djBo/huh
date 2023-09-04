@@ -1,0 +1,243 @@
+targetted_decisions = {
+
+	# huh_disable = {
+	# 	filter = self
+
+	# 	#from_potential = {
+	# 	#	ai = no
+	# 	#	has_character_flag = huh_enabled
+	# 	#}
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 	}
+	# 	allow = {
+	# 		always = yes
+	# 	}
+	# 	effect = {
+	# 		clr_character_flag = huh_enabled
+	# 		set_character_flag = huh_disabled
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_enable = {
+	# 	filter = self
+
+	# 	#from_potential = {
+	# 	#	ai = no
+	# 	#	NOT = { has_character_flag = huh_enabled }
+	# 	#}
+	# 	potential = {
+	# 		ai = no
+	# 		NOT = { has_character_flag = huh_enabled }
+	# 	}
+	# 	allow = {
+	# 		always = yes
+	# 	}
+	# 	effect = {
+	# 		set_character_flag = huh_enabled
+	# 		clr_character_flag = huh_disabled
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	# huh_fire = {
+	# 	filter = self
+
+	# 	#from_potential = {
+	# 	#	ai = no
+	# 	#	has_character_flag = huh_enabled
+	# 	#}
+	# 	potential = {
+	# 		ai = no
+	# 		has_character_flag = huh_enabled
+	# 	}
+	# 	allow = {
+	# 		always = yes
+	# 	}
+	# 	effect = {
+	# 		huh_fire_all = yes
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# }
+
+	huh_reset = {
+		filter = self
+
+		potential = {
+			ai = no
+			has_character_flag = huh_enabled
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			clr_character_flag = huh_spouse
+			clr_character_flag = huh_chancellor
+			clr_character_flag = huh_marshal
+			clr_character_flag = huh_treasurer
+			clr_character_flag = huh_spymaster
+			clr_character_flag = huh_spiritual
+			clr_character_flag = huh_maiden
+			clr_character_flag = huh_mayor
+			clr_character_flag = huh_vassal
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	huh_reset_them = {
+		filter = all
+
+		from_potential = {
+			ai = no
+			has_character_flag = huh_enabled
+		}
+		potential = {
+			# OR = {
+				# had_character_flag = { flag = is_huh_spouse days => 1 }
+				had_character_flag = {
+					flag = is_huh_chancellor
+					days >= 0
+				}
+				# had_character_flag = { flag = is_huh_marshal days > 1 }
+				# had_character_flag = { flag = is_huh_treasurer days > 1 }
+				# had_character_flag = { flag = is_huh_spymaster days > 1 }
+				# had_character_flag = { flag = is_huh_spiritual days > 1 }
+				# had_character_flag = { flag = is_huh_maiden days > 1 }
+				# had_character_flag = { flag = is_huh_mayor days > 1 }
+				# had_character_flag = { flag = is_huh_vassal days > 1 }
+			# }
+			NOT = { liege = { character = FROM } }
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			if = {
+				limit = { has_character_flag = is_huh_spouse }
+				clr_character_flag = is_huh_spouse
+				FROM = {
+					clr_character_flag = huh_spouse
+				}
+			}
+			if = {
+				limit = { has_character_flag = is_huh_chancellor }
+				clr_character_flag = is_huh_chancellor
+				FROM = {
+					clr_character_flag = huh_chancellor
+				}
+			}
+			if = {
+				limit = { has_character_flag = is_huh_marshal }
+				clr_character_flag = is_huh_marshal
+				FROM = {
+					clr_character_flag = huh_marshal
+				}
+			}
+			if = {
+				limit = { has_character_flag = is_huh_treasurer }
+				clr_character_flag = is_huh_treasurer
+				FROM = {
+					clr_character_flag = huh_treasurer
+				}
+			}
+			if = {
+				limit = { has_character_flag = is_huh_spymaster }
+				clr_character_flag = is_huh_spymaster
+				FROM = {
+					clr_character_flag = huh_spymaster
+				}
+			}
+			if = {
+				limit = { has_character_flag = is_huh_spiritual }
+				clr_character_flag = is_huh_spiritual
+				FROM = {
+					clr_character_flag = huh_spiritual
+				}
+			}
+			if = {
+				limit = { has_character_flag = is_huh_maiden }
+				clr_character_flag = is_huh_maiden
+				FROM = {
+					clr_character_flag = huh_maiden
+				}
+			}
+			if = {
+				limit = { has_character_flag = is_huh_mayor }
+				clr_character_flag = is_huh_mayor
+				FROM = {
+					clr_character_flag = huh_mayor
+				}
+			}
+			if = {
+				limit = { has_character_flag = is_huh_vassal }
+				clr_character_flag = is_huh_vassal
+				FROM = {
+					clr_character_flag = huh_vassal
+				}
+			}
+			remove_trait = immortal
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	huh_restore_them = {
+		filter = all
+
+		from_potential = {
+			ai = no
+			has_character_flag = huh_enabled
+		}
+		potential = {
+			OR = {
+				has_character_flag = is_huh_chancellor
+				has_character_flag = is_huh_marshal
+				has_character_flag = is_huh_treasurer
+				has_character_flag = is_huh_spymaster
+				has_character_flag = is_huh_spiritual
+			}
+			liege = { character = FROM }
+			has_job_title = no
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			if = {
+				limit = { has_character_flag = is_huh_chancellor }
+				give_job_title = job_chancellor
+			}
+			if = {
+				limit = { has_character_flag = is_huh_marshal }
+				give_job_title = job_marshal
+			}
+			if = {
+				limit = { has_character_flag = is_huh_treasurer }
+				give_job_title = job_treasurer
+			}
+			if = {
+				limit = { has_character_flag = is_huh_spymaster }
+				give_job_title = job_spymaster
+			}
+			if = {
+				limit = { has_character_flag = is_huh_spiritual }
+				give_job_title = job_spiritual
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}
